@@ -1,0 +1,23 @@
+morgan ejs body-parser dotenv mongoose axios : Differenet libraries for App
+
+Step: 1
+    I created a folder with name of "Assignment".
+
+Step: 2
+    command: "npm init" or "npm init --yes"
+    I used above command to install the step by step tools to scaffolds to our projects. An created the file with name of "package.json".
+    If we install any libraries that will save name and version of it and saved on dependency section in package.json file.
+
+Step: 3
+    command: "npm install express"
+
+Step: 4
+    I created a file with name of app.js.
+
+Step: 5
+    command: "npm install nodemon".
+    Using the above command we installed nodemon because if any changes has been done on files then we need to save file and its automatically 
+    run the app("npm run start").
+
+    command: "npm run start" using this command we run file and listenting port. 
+    http://localhost:4000/ by using these URL we can view output on Webpage.
