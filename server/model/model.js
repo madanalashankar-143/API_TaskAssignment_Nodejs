@@ -15,12 +15,7 @@ var schema = new mongoose.Schema( {
     email: {
         type: String,
         unique : true,
-        required: true,
-        validate(value) {
-            if (!validator.isEmail(value)) {
-                throw new Error('EmailId is Invalid');
-            }
-        }
+        required: true
     },
 
     address: {
