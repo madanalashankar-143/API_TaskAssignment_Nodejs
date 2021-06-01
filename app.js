@@ -8,32 +8,23 @@ const connectDB = require('./server/database/connection');
 
 const app = express();
 
-dotenv.config({path:'config.env'})
+//  I created a file config.env, In this file i declared PORT no and i called that file path using below syntax. 
+
+dotenv.config({path:'config.env'});
+
+//  In below syntax we declared port number but its not view on the url because i already gave a default port
+//  number in config.env file. URL path is http://localhhost:4000. If we need to change port no just change on config.env file.
+
 const PORT = process.env.PORT || 3000;
 
 // log request
-app.use(morgan('tiny'));
+// app.use(morgan('tiny'));
 
 //mongoDB Connection
-
 connectDB();
 
 //parse request to the body-parser
 app.use(bodyParser.urlencoded({extended: true}));
-
-//set view engine
-// app.set("view engine", "ejs");
-
-
-// app.set("views", path.resolve(__dirname, "views/ejs"));
-
-//load assets
-
-// app.use('/css', express.static(path.resolve(__dirname, "assets/css")));
-// app.use('/img', express.static(path.resolve(__dirname, "assets/img")));
-// app.use('/js', express.static(path.resolve(__dirname, "assets/js")));
-
-///css/style.css specific folder need to access then do as early of the sentences mention path.
 
 
 //Load Routes

@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-var geolocation = require('geolocation');
 
 var schema = new mongoose.Schema( {
     name: {
@@ -16,7 +15,12 @@ var schema = new mongoose.Schema( {
     email: {
         type: String,
         unique : true,
-        required: true
+        required: true,
+        validate(value) {
+            if (!validator.isEmail(value)) {
+                throw new Error('EmailId is Invalid');
+            }
+        }
     },
 
     address: {
@@ -42,10 +46,7 @@ var schema = new mongoose.Schema( {
         },
         coordinateType: {
             type: String,
-            required: true,
-            // geolocation.getCurrentPosition(position => {
-
-            // })
+            required: true
         },
         coordinates: {
             type: String,

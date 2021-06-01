@@ -5,6 +5,7 @@ var Userdb = require('../model/model');
 exports.create = (req, res) => {
 
     //Validate the request.
+    
     if(!req.body) {
         res.status(400).send( {message: "Content cannot be empty."} );
         return;
@@ -30,7 +31,7 @@ exports.create = (req, res) => {
         }
     } )
 
-    //save Userin the database.
+    //save User in the database.
     user.save(user).then(data => {
         res.send(data)
     }).catch(err => {
@@ -42,6 +43,7 @@ exports.create = (req, res) => {
 }
 
 // retrive and return all users/ retrive and return a single User.
+
 exports.find = (req, res) => {
     Userdb.find().then(user => {
         res.send(user)
